@@ -1,7 +1,7 @@
 function search(event) {
   event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
+  let searchInputElement = document.querySelector(".search-input");
+  let cityElement = document.querySelector(".current-city");
   cityElement.innerHTML = searchInputElement.value;
 }
 
@@ -32,10 +32,10 @@ function formatDate(date) {
   return `${formattedDay} ${hours}:${minutes}`;
 }
 
-let searchForm = document.querySelector("#search-form");
+let searchForm = document.querySelector("form"); // or add an ID to the form and use #search-form
 searchForm.addEventListener("submit", search);
 
-let currentDateELement = document.querySelector("#current-date");
+let currentDateElement = document.querySelector(".current-details"); // Use .current-details or .current-date if you change the class name
 let currentDate = new Date();
 
-currentDateELement.innerHTML = formatDate(currentDate);
+currentDateElement.innerHTML = formatDate(currentDate);
